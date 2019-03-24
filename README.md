@@ -63,3 +63,16 @@
 1. AppTestUnitTestResults.xml is the unit test result report
 
 
+**Results**
+
+https://github.com/deepikathimmegowda/Java-Deloitte-Case-Study/blob/master/result.png
+
+
+**Executable file**
+
+https://github.com/deepikathimmegowda/Java-Deloitte-Case-Study/blob/master/Deloitte-JavaCaseStudyJar.jar
+
+Is the executable jar file. Cd into correct directory and run the below command
+
+```java -jar Deloitte-JavaCaseStudyJar.jar```
+
