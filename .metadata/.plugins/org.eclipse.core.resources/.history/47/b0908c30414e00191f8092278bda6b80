@@ -60,7 +60,7 @@ public class Activity {
 	
 	public int getTotalDurationOfActivitiesAdded(ArrayList<ActivityModel> teamActivities) {
 		int sum = 0;
-		if(teamActivities != null && teamActivities.size() > 0) {
+		if(teamActivities != null && teamActivities.size() <= 0) {
 			for(ActivityModel activity : teamActivities) {
 				sum = sum + activity.duration;
 			}

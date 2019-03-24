@@ -1249,3 +1249,43 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact junit:junit:j
 2019-03-24 14:10:05,610 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
 2019-03-24 14:10:05,611 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-03-24 14:10:05,611 [Worker-149: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:18:48,145 [Worker-156: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:18:48,147 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:18:48,147 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:18:48,147 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:18:48,147 [Worker-156: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:26:16,054 [Worker-159: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:26:16,056 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:26:16,056 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:26:16,057 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:26:16,057 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:29:10,795 [Worker-159: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:29:10,796 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:29:10,796 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:29:10,796 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:29:10,796 [Worker-159: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:31:46,254 [Worker-160: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:31:46,255 [Worker-160: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:31:46,255 [Worker-160: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:31:46,256 [Worker-160: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:31:46,256 [Worker-160: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:31:47,840 [Worker-162: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:31:47,841 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:31:47,842 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:31:47,842 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:31:47,842 [Worker-162: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:33:42,211 [Worker-163: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:33:42,212 [Worker-163: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:33:42,212 [Worker-163: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:33:42,212 [Worker-163: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:33:42,212 [Worker-163: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:37:25,029 [Worker-161: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:37:25,030 [Worker-161: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:37:25,030 [Worker-161: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:37:25,032 [Worker-161: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:37:25,032 [Worker-161: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources
+2019-03-24 14:38:26,157 [Worker-164: Building workspace] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2019-03-24 14:38:26,166 [Worker-164: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:38:26,166 [Worker-164: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/main/resources
+2019-03-24 14:38:26,166 [Worker-164: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-03-24 14:38:26,167 [Worker-164: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/resources

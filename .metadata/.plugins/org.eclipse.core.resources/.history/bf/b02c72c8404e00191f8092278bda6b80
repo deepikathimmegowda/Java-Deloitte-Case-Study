@@ -45,7 +45,7 @@ public class AppTest
     		"Time Tracker sprint\n" + 
     		"Indiano Drizzle 45min";
     
-    String testFilePath = "/Users/deepikathimmegowda/Desktop/Java-Deloitte/Deloitte-CaseStudy/DeloitteCaseStudy/src/test/java/DeloitteDigitalAwayDay/testData/activities.txt";
+    String testFilePath = "/Users/deepikathimmegowda/Desktop/Java-Deloitte/Organise-Events/src/activities.txt";
        
     @Test
     public void testReadFileContent() throws Exception{

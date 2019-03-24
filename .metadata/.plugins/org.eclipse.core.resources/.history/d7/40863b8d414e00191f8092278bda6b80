@@ -22,12 +22,12 @@ public class Team {
 			ArrayList<ActivityModel> allactivites, 
 			int numberOfTeams) throws Exception {
 		
-		if(teams.isEmpty()) { 
-			throw new Exception("teams initialAssignedToTeams() is Empty");
+		if(teams != null && teams.size() <= 0) { 
+			throw new Exception("teams initialAssignedToTeams() in null or Empty");
 		}
 		
-		if(allactivites.isEmpty()) { 
-			throw new Exception("allactivites initialAssignedToTeams() is Empty");
+		if(allactivites != null && allactivites.size() <= 0) { 
+			throw new Exception("allactivites initialAssignedToTeams() in null or Empty");
 		}
 		
 		int index = 0;
@@ -59,12 +59,12 @@ public class Team {
 			ArrayList<ActivityModel> allactivites, 
 			int numberOfTeams) throws Exception {
 		
-		if(teams.isEmpty()) { 
-			throw new Exception("teams checkIfAnyUnassignedAndAssignToTeams() is Empty");
+		if(teams != null && teams.size() <= 0) { 
+			throw new Exception("teams checkIfAnyUnassignedAndAssignToTeams() in null or Empty");
 		}
 		
-		if(allactivites.isEmpty()) { 
-			throw new Exception("allactivites checkIfAnyUnassignedAndAssignToTeams() is Empty");
+		if(allactivites != null && allactivites.size() <= 0) { 
+			throw new Exception("allactivites checkIfAnyUnassignedAndAssignToTeams() in null or Empty");
 		}
 		
 		int index = 0;
@@ -89,8 +89,8 @@ public class Team {
 	 * @throws Exception
 	 */
 	private void allocateTimeToActivities(ArrayList<TeamModel> teams) throws Exception {
-		if(teams.isEmpty()) { 
-			throw new Exception("teams allocateTimeToActivities() is Empty");
+		if(teams != null && teams.size() <= 0) { 
+			throw new Exception("teams allocateTimeToActivities() in null or Empty");
 		}
 		
 		//assign time now each team
@@ -169,8 +169,8 @@ public class Team {
 	
 	public void printTeamDetails(ArrayList<TeamModel> teams) throws Exception {
 		
-		if(teams.isEmpty()) { 
-			throw new Exception("teams printTeamDetails() is Empty");
+		if(teams != null && teams.size() <= 0) { 
+			throw new Exception("teams printTeamDetails() in null or Empty");
 		}
 		
 		for (TeamModel item : teams) {
