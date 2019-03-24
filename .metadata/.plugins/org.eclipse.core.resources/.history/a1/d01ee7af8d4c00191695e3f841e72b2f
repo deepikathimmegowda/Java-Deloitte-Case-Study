@@ -1,0 +1,6 @@
+package Models;
+
+public class ActivitiesModel {
+	public String activityName;
+	public String duration;
+}

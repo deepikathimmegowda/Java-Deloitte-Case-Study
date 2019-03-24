@@ -1,0 +1,63 @@
+package DeloitteDigitalAwayDay.DeloitteCaseStudy;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.classes.*;
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.models.*;
+
+@RunWith(MockitoJUnitRunner.class)
+public class AppTest
+{
+    @InjectMocks
+    Activity activity;
+     
+    @Mock
+    TeamModel teamModel;
+     
+    @Mock
+    ActivityModel activityModel;
+     
+    
+    ArrayList<ActivityModel> allactvities;
+    
+    @Test
+    public void testReadFileContentTest(){
+    	
+    }
+    @Test
+    public void TestGetAllActivitiesFromFile()
+    {
+        allactvities = activity.getAllActivitiesFromFile("Duck Herding 60min\n" + 
+        		"Archery 45min\n" + 
+        		"Learning Magic Tricks 40min\n" + 
+        		"Laser Clay Shooting 60min\n" + 
+        		"Human Table Football 30min\n" + 
+        		"Buggy Driving 30min\n" + 
+        		"Salsa & Pickles sprint\n" + 
+        		"2-wheeled Segways 45min\n" + 
+        		"Viking Axe Throwing 60min\n" + 
+        		"Giant Puzzle Dinosaurs 30min\n" + 
+        		"Giant Digital Graffiti 60min\n" + 
+        		"Cricket 2020 60min\n" + 
+        		"Wine Tasting sprint\n" + 
+        		"Arduino Bonanza 30min\n" + 
+        		"Digital Tresure Hunt 60min\n" + 
+        		"Enigma Challenge 45min\n" + 
+        		"Monti Carlo or Bust 60min\n" + 
+        		"New Zealand Haka 30min\n" + 
+        		"Time Tracker sprint\n" + 
+        		"Indiano Drizzle 45min");
+         
+        assertEquals(20, allactvities.size());
+    }
+}

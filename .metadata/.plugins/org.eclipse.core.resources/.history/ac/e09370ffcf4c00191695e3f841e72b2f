@@ -1,0 +1,39 @@
+package events;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import Models.Team;
+import Utils.FileOperation;
+import events.Activity;
+
+public class Start {
+	
+	static Activity activityObj = new Activity();
+	static Team teamObj = new Team();
+	
+	public static void main (String [] arguments) throws FileNotFoundException
+    {
+		// /Users/deepikathimmegowda/Desktop/Java-Deloitte/Organise-Events/src/activities.txt
+		String filePath = FileOperation.getFilePathInput();
+		String fileContent = FileOperation.readFileContent(filePath);
+		
+		ArrayList<Team> teams = new ArrayList<Team>();
+		ArrayList<Activity> allActivities = activityObj.getActivitiesList(fileContent);
+	
+		for (Activity item : activities) {
+			System.out.println("Name : "+ item.activityName + " -- Duration : " + item.duration);
+		}
+		for (Team item : teams) {
+			System.out.println("Name : "+ item.teamname);
+		}
+		
+		
+		int numberOfTeams = teamObj.getNumberOfTeam(allActivities);
+		teams = teamObj.getAllTeams(numberOfTeams);
+		
+		teamObj.assignActivitiesToTeams(teams,allActivities,numberOfTeams);
+    }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AppTest" project="DeloitteCaseStudy" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="DeloitteDigitalAwayDay.DeloitteCaseStudy.AppTest" time="0.0">
+    <testcase name="testReadFileContent" classname="DeloitteDigitalAwayDay.DeloitteCaseStudy.AppTest" time="0.0"/>
+    <testcase name="testGetTotalDurationOfActivitiesAdded" classname="DeloitteDigitalAwayDay.DeloitteCaseStudy.AppTest" time="0.0"/>
+    <testcase name="testGetAllActivitiesFromFile" classname="DeloitteDigitalAwayDay.DeloitteCaseStudy.AppTest" time="0.0"/>
+  </testsuite>
+</testrun>

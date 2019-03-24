@@ -1,0 +1,10 @@
+package DeloitteDigitalAwayDay.DeloitteCaseStudy.utils;
+
+public class Utilities{
+	
+	public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
+    }
+}

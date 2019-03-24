@@ -1,0 +1,52 @@
+package classes;
+
+import java.util.ArrayList;
+ 
+import Models.ActivityModel;
+import Utils.Constants;
+
+public class Activity {
+	
+	public ActivityModel getLunchActivity() {
+		var activity = new ActivityModel();
+		activity.activityName = "Lunch Break";
+		activity.duration = 60;
+		return activity;
+	}
+	
+	public ActivityModel getSpeechActivity() {
+		var activity = new ActivityModel();
+		activity.activityName = "Staff Motivation Presentation";
+		activity.duration = 60;
+		return activity;
+	}
+	
+
+	public ArrayList<ActivityModel> getAllActivitiesFromFile(String fileContent) {
+		ArrayList<ActivityModel> activities = new ArrayList<ActivityModel>();
+		String[] splitlines = fileContent.split("\n");
+		
+		for(int index = 0; index < splitlines.length; index++) {
+			
+			var item = new ActivityModel();
+			var text = splitlines[index].trim().toLowerCase();
+			
+			if(text.contains("sprint"))
+			{
+				item.duration = 15;
+				item.activityName = text.replace("sprint", "");
+			}
+			else if(text.endsWith("min"))//lenduck herding 60min
+			{
+				String textWithoutMin = text.substring(0, text.length() -3); //lenduck herding 60
+				String name = (textWithoutMin.substring(0,textWithoutMin.length() - 2)).trim();//lenduck herding
+				String duration = textWithoutMin.substring(textWithoutMin.length() - 2, textWithoutMin.length());
+				item.duration  = Integer.parseInt(duration);
+				item.activityName =  name;
+
+			}
+			activities.add(item);
+		}
+		return activities;
+	}	
+}

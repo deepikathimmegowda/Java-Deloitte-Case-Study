@@ -1,0 +1,21 @@
+package Models;
+
+import java.util.Date;
+
+public class ActivityModel {
+	public String activityName;
+	public int duration;
+	public boolean marked;
+	public Date startTime;
+	
+	public ActivityModel {
+		this.startTime;
+	}
+		
+	public int compareTo(ActivityModel item) {
+        //let's sort the employee based on an id in ascending order
+        //returns a negative integer, zero, or a positive integer as this employee id
+        //is less than, equal to, or greater than the specified object.
+        return (this.duration - item.duration);
+    }
+}

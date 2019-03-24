@@ -1,0 +1,40 @@
+package DeloitteDigitalAwayDay.DeloitteCaseStudy;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.classes.*;
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.models.*;
+
+@RunWith(MockitoJUnitRunner.class)
+public class AppTest
+{
+    @InjectMocks
+    Activity activity;
+     
+    @Mock
+    TeamModel teamModel;
+     
+    @Mock
+    ActivityModel activityModel;
+     
+    @Test
+    public void saveTest()
+    {
+        ArrayList<ActivityModel> allactivities = activity.getAllActivitiesFromFile("Duck Herding 60min\n" + 
+        		"Archery 45min\n" + 
+        		"Salsa & Pickles sprint\n" + 
+        		"2-wheeled Segways 45min\n");
+        
+        assertEquals(true, saved);
+    }
+}

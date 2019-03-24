@@ -1,0 +1,41 @@
+package deloitte.digital.away.day;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import Models.TeamModel;
+import Utils.FileOperation;
+import classes.*;
+
+public class Start {
+	
+	static Activity activityObj = new Activity();
+	static Team teamObj = new Team();
+	
+	public static void main (String [] arguments) throws FileNotFoundException
+    {
+		// /Users/deepikathimmegowda/Desktop/Java-Deloitte/Organise-Events/src/activities.txt
+		String filePath = FileOperation.getFilePathInput();
+		String fileContent = FileOperation.readFileContent(filePath);
+		
+		ArrayList<Team> teams = new ArrayList<Team>();
+		ArrayList<Activity> allActivities = activityObj.getActivitiesList(fileContent);
+	
+		/*for (Activity item : allActivities) {
+			System.out.println("Name : "+ item.activityName + " -- Duration : " + item.duration);
+		}*/
+		
+		
+		
+		int numberOfTeams = teamObj.getNumberOfTeam(allActivities);
+		teams = teamObj.getAllTeams(numberOfTeams);
+		
+		/*for (Team item : teams) {
+			System.out.println("Name : "+ item.teamname);
+		}*/
+		
+		teamObj.assignActivitiesToTeams(teams,allActivities,numberOfTeams);
+    }
+}

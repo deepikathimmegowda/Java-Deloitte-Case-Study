@@ -1,0 +1,12 @@
+package tests.units;
+
+import org.junit.jupiter.api.Test;
+
+public class activityTests {
+	@Test
+    public void test_dataservice_config_from_a_new_instance() {
+        Result result = new ConfigController().getServiceConfig();
+        assertEquals(OK, result.status());
+        assertEquals("application/json", result.contentType().get());
+    }
+}

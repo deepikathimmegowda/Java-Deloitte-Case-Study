@@ -1,0 +1,34 @@
+package DeloitteDigitalAwayDay.DeloitteDigitalAwayDay;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+import models.*;
+import utils.FileOperation;
+import classes.*;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+
+	static Activity activityObj = new Activity();
+	static Team teamObj = new Team();
+	
+	public static void main (String [] arguments) throws FileNotFoundException
+    {
+		// /Users/deepikathimmegowda/Desktop/Java-Deloitte/Organise-Events/src/activities.txt
+		String filePath = FileOperation.getFilePathInput();
+		String fileContent = FileOperation.readFileContent(filePath);
+		
+		ArrayList<TeamModel> teams = new ArrayList<TeamModel>();
+		ArrayList<ActivityModel> allActivities = activityObj.getAllActivitiesFromFile(fileContent);
+		
+		int numberOfTeams = teamObj.getNumberOfTeams(allActivities);
+		teams = teamObj.getAllTeams(numberOfTeams);
+		
+		teamObj.assignActivitiesToTeams(teams,allActivities,numberOfTeams);
+		teamObj.printTeamDetails(teams);
+    }
+}

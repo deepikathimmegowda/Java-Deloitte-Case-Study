@@ -1,0 +1,19 @@
+package Utils;
+
+import java.util.Scanner;
+
+public class FileOperation {
+	
+	public static String getFilePathInput() {
+		System.out.println("Enter file Path: ");
+		var scanner = new Scanner(System.in);
+		String path = scanner.nextLine();
+		return path;
+	}
+	
+	public static void readFileContent(String filepath) {
+		
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package Utils;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Constants {
+    public static final int MAX_ALLOCATED = 420;
+    public static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("HH:mm");
+}

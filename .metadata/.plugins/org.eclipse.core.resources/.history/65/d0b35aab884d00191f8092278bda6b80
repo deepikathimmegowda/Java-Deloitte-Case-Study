@@ -1,0 +1,26 @@
+package DeloitteDigitalAwayDay.DeloitteCaseStudy.utils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class FileOperation {
+	
+	@SuppressWarnings("resource")
+	public static String getFilePathInput() {
+		String path = "";
+		Scanner scanner = new Scanner(System.in);
+		while(path.isEmpty()) {
+			System.out.println("Enter file Path: ");
+			path = scanner.nextLine();
+		}
+		return path;
+	}
+	
+	@SuppressWarnings("resource")
+	public static String readFileContent(String filePath) throws FileNotFoundException {
+		if(filePath.isEmpty() || filePath == null) throw new exception("File path cant be null");
+		
+    	return new Scanner(new File(filePath)).useDelimiter("\\Z").next();
+	}
+}

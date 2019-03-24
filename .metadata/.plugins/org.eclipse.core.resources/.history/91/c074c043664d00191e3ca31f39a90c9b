@@ -1,0 +1,8 @@
+package Models;
+
+import java.util.ArrayList;
+
+public class TeamModel {
+	public String teamname;
+	public ArrayList<ActivityModel> teamActivities;
+}

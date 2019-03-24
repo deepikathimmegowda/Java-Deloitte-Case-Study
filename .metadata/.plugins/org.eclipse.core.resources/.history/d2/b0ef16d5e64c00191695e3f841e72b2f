@@ -1,0 +1,129 @@
+package Models;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+
+import Utils.Constants;
+import events.Activity;
+
+public class Team {
+	public String teamname;
+	public ArrayList<Activity> teamActivities;
+	public Date lastActivityTime;
+	
+	public Team getInitTeam(String teamName) {
+		Team team = new Team();
+		team.teamname = teamName;
+		team.teamActivities = new ArrayList<Activity>();
+		
+		return team;
+		
+	}
+	
+	public ArrayList<Team> getAllTeams(int numberOfTeams){
+		ArrayList<Team> teams = new ArrayList<Team> ();
+		for(int i = 1; i <= numberOfTeams ; i++) {	
+			var team = new Team();
+			team.teamname = "Team"+i;
+			team.teamActivities = new ArrayList<Activity>();
+			teams.add(team);
+		}
+		return teams;
+	}
+	
+	public int getNumberOfTeam(ArrayList<Activity> activities) {
+		int sum = 0;
+		for (Activity item : activities) {
+			sum = sum + item.duration;
+		}
+		//from 9 to 12 and 4 to 5 total of activities 420 mins can be allocated excluding lunch and  Staff Motivation Presentation
+		int totalTeam = sum / Constants.MAX_ALLOCATED;
+		totalTeam =  sum % Constants.MAX_ALLOCATED > 0 ? totalTeam + 1 : totalTeam;
+		return totalTeam;
+	}
+	
+	public void assignActivitiesToTeams(ArrayList<Team> teams, ArrayList<Activity> allactivites, int numberOfTeams) {
+		int index = 0;
+		Activity activityObj = new Activity();
+		//divide 
+		for(Activity eachActivity: allactivites) {
+			if(!eachActivity.assigned)
+			{
+				if(teams.get(index) != null) 
+				{
+					if(getTotalDurationOfActivitiesAdded(teams.get(index).teamActivities) <= Constants.MAX_ALLOCATED)
+					{
+						teams.get(index).teamActivities.add(eachActivity);
+					
+						eachActivity.assigned = true;
+					}
+					index = index < numberOfTeams - 1 ? index + 1 : 0;
+				}
+			}
+		}
+		
+		//check if any unassigned?
+		index = 0;
+		for(Activity eachActivity: allactivites) {
+			if(!eachActivity.assigned)
+			{
+				int assignedDuration = getTotalDurationOfActivitiesAdded(teams.get(index).teamActivities);
+				if(assignedDuration + eachActivity.duration <= Constants.MAX_ALLOCATED) {
+					teams.get(index).teamActivities.add(eachActivity);
+					index = index < numberOfTeams - 1 ? index + 1 : 0;
+				}
+			}
+			
+		}
+		
+		
+		//assign time now each team
+		for (Team item : teams) {
+		    LocalTime time = LocalTime.parse("09:00");
+		    boolean lunchAdded = false;
+		    boolean speechAdded = false;
+			for(int i = 0; i < item.teamActivities.size(); i++) {
+				item.teamActivities.get(i).startTime = time;
+				
+				if(!lunchAdded) {					
+					if((time.plusMinutes(item.teamActivities.get(i).duration).getHour() >= 13 &&
+					   time.plusMinutes(item.teamActivities.get(i).duration).getHour() != 12)
+					||
+					(time.plusMinutes(item.teamActivities.get(i).duration).getHour() >= 12 && 
+					 time.plusMinutes(item.teamActivities.get(i).duration).getHour() <= 13)) {
+						item.teamActivities.add(i, activityObj.getLunchActivity());
+						item.teamActivities.get(i).startTime = time;
+						time = time.plusMinutes(60);
+						lunchAdded = true;
+						continue;
+					}
+				}
+				
+					time = time.plusMinutes(item.teamActivities.get(i).duration);
+			}
+		}
+		
+		
+		
+		for (Team item : teams) {
+			System.out.println("************ Name : "+ item.teamname);
+			for(Activity eachActivity : item.teamActivities) {
+				System.out.println(eachActivity.activityName + "   " + eachActivity.duration + "   " + Constants.DATE_TIME_FORMATTER.format(eachActivity.startTime));
+			}
+		}
+		
+	}
+	
+	public int getTotalDurationOfActivitiesAdded(ArrayList<Activity> teamActivities) {
+		int sum = 0;
+		if(teamActivities != null) {
+			for(Activity activity : teamActivities) {
+				sum = sum + activity.duration;
+			}
+		}
+		return sum;
+	}
+}

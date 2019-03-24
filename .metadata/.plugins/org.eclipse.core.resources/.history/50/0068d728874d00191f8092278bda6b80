@@ -1,0 +1,97 @@
+package DeloitteDigitalAwayDay.DeloitteCaseStudy;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.classes.*;
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.models.*;
+import DeloitteDigitalAwayDay.DeloitteCaseStudy.utils.FileOperation;
+
+@RunWith(MockitoJUnitRunner.class)
+public class AppTest
+{
+    @InjectMocks
+    Activity activity;
+    
+    @InjectMocks
+    Team team;
+    
+    ArrayList<ActivityModel> allactvities;
+    ArrayList<TeamModel> teams;
+    String MockFileContent = "Duck Herding 60min\n" + 
+    		"Archery 45min\n" + 
+    		"Learning Magic Tricks 40min\n" + 
+    		"Laser Clay Shooting 60min\n" + 
+    		"Human Table Football 30min\n" + 
+    		"Buggy Driving 30min\n" + 
+    		"Salsa & Pickles sprint\n" + 
+    		"2-wheeled Segways 45min\n" + 
+    		"Viking Axe Throwing 60min\n" + 
+    		"Giant Puzzle Dinosaurs 30min\n" + 
+    		"Giant Digital Graffiti 60min\n" + 
+    		"Cricket 2020 60min\n" + 
+    		"Wine Tasting sprint\n" + 
+    		"Arduino Bonanza 30min\n" + 
+    		"Digital Tresure Hunt 60min\n" + 
+    		"Enigma Challenge 45min\n" + 
+    		"Monti Carlo or Bust 60min\n" + 
+    		"New Zealand Haka 30min\n" + 
+    		"Time Tracker sprint\n" + 
+    		"Indiano Drizzle 45min";
+    String testFilePath = "/Users/deepikathimmegowda/Desktop/Java-Deloitte/Organise-Events/src/activities.txt";
+   
+    ArrayList<ActivityModel> allactvities1 = new ArrayList<ActivityModel>();
+    
+    @Test
+    public void testReadFileContent() throws FileNotFoundException{
+		String readFileContent = FileOperation.readFileContent(testFilePath);
+		assertEquals(MockFileContent, readFileContent);
+    }
+    
+    @Test
+    public void testGetAllActivitiesFromFile()
+    {
+        allactvities = activity.getAllActivitiesFromFile(MockFileContent);
+        assertEquals(20, allactvities.size());
+    }
+    
+    @Test
+    public void testGetTotalDurationOfActivitiesAdded()
+    {
+    	allactvities = activity.getAllActivitiesFromFile(MockFileContent);
+        int total = activity.getTotalDurationOfActivitiesAdded(allactvities);
+        assertEquals(835, total);
+    }
+    
+    
+    @Test
+    public void testGetNumberOfTeams()
+    {
+    	allactvities = activity.getAllActivitiesFromFile(MockFileContent);
+        int totalTeams = team.getNumberOfTeams(allactvities);
+        assertEquals(2, totalTeams);
+    }
+    
+    
+    @Test
+    public void testacvitiesAssignedtoTeams()
+    {
+    	allactvities = activity.getAllActivitiesFromFile(MockFileContent);
+        int totalTeams = team.getNumberOfTeams(allactvities);
+        teams = team.getAllTeams(totalTeams);
+        assertEquals(2, teams.size());
+        assertEquals(12, teams.get(0).teamActivities.size());
+        assertEquals(12, teams.get(1).teamActivities.size());
+    }
+    
+}

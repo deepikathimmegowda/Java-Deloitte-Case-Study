@@ -1,0 +1,14 @@
+package Utils;
+
+import java.util.Scanner;
+
+public class FileOperation {
+	
+	public static void getFilePathInput() {
+		System.out.println("Enter file Path: ");
+		var scanner = new Scanner(System.in);
+		String username = scanner.nextLine();
+		System.out.println("Your username is " + username);
+	}
+	
+}

@@ -1,0 +1,5 @@
+package Utils;
+
+public class Constants {
+	public static const int MAX_ALLOCATED = 420;
+}

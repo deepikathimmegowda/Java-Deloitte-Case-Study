@@ -1,0 +1,10 @@
+package Modelstest;
+
+import java.time.LocalTime;
+
+public class ActivityModel {
+	public String activityName;
+	public int duration;
+	public boolean assigned;
+	public LocalTime startTime;
+}

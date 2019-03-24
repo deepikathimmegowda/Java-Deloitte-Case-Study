@@ -1,0 +1,118 @@
+package classes;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+
+import Models.*;
+import Utils.Constants;
+import classes.Activity;
+
+public class Team {
+	Activity activityObj = new Activity();
+
+	public ArrayList<TeamModel> getAllTeams(int numberOfTeams){
+		ArrayList<TeamModel> teams = new ArrayList<TeamModel> ();
+		for(int i = 1; i <= numberOfTeams ; i++) {	
+			var team = new TeamModel();
+			team.teamname = Constants.TEAM + i;
+			team.teamActivities = new ArrayList<ActivityModel>();
+			teams.add(team);
+		}
+		return teams;
+	}
+	
+	public int getNumberOfTeams(ArrayList<ActivityModel> activities) {
+		int sum = 0;
+		for (ActivityModel item : activities) {
+			sum = sum + item.duration;
+		}
+		//from 9 to 12 and 4 to 5 total of activities 420 mins can be allocated excluding lunch and  Staff Motivation Presentation
+		int totalTeam = sum / Constants.MAX_ALLOCATED;
+		totalTeam =  sum % Constants.MAX_ALLOCATED > 0 ? totalTeam + 1 : totalTeam;
+		return totalTeam;
+	}
+	
+	public void method1(ArrayList<TeamModel> teams, ArrayList<ActivityModel> allactivites, int numberOfTeams) {
+		int index = 0;
+		//divide 
+		for(ActivityModel eachActivity: allactivites) {
+			if(!eachActivity.assigned)
+			{
+				if(teams.get(index) != null) 
+				{
+					if(activityObj.getTotalDurationOfActivitiesAdded(teams.get(index).teamActivities) <= Constants.MAX_ALLOCATED)
+					{
+						teams.get(index).teamActivities.add(eachActivity);
+					
+						eachActivity.assigned = true;
+					}
+					index = index < numberOfTeams - 1 ? index + 1 : 0;
+				}
+			}
+		}
+	}
+	
+	public void method2(ArrayList<TeamModel> teams, ArrayList<ActivityModel> allactivites, int numberOfTeams) {
+		//check if any unassigned?
+		int index = 0;
+		for(ActivityModel eachActivity: allactivites) {
+			if(!eachActivity.assigned)
+			{
+				int assignedDuration = activityObj.getTotalDurationOfActivitiesAdded(teams.get(index).teamActivities);
+				if(assignedDuration + eachActivity.duration <= Constants.MAX_ALLOCATED) {
+					teams.get(index).teamActivities.add(eachActivity);
+					index = index < numberOfTeams - 1 ? index + 1 : 0;
+				}
+			}
+			
+		}
+	}
+	
+	public void method3(ArrayList<TeamModel> teams) {
+		//assign time now each team
+		for (TeamModel item : teams) {
+		    LocalTime time = LocalTime.parse(Constants.INIT_TIME);
+		    boolean lunchAdded = false;
+			for(int i = 0; i < item.teamActivities.size(); i++) {
+				item.teamActivities.get(i).startTime = time;
+				
+				if(!lunchAdded) {					
+					if((time.plusMinutes(item.teamActivities.get(i).duration).getHour() >= 13 &&
+					   time.plusMinutes(item.teamActivities.get(i).duration).getHour() != 12)
+					||
+					(time.plusMinutes(item.teamActivities.get(i).duration).getHour() >= 12 && 
+					 time.plusMinutes(item.teamActivities.get(i).duration).getHour() <= 13)) {
+						item.teamActivities.add(i, activityObj.getLunchActivity());
+						item.teamActivities.get(i).startTime = time;
+						time = time.plusMinutes(60);
+						lunchAdded = true;
+						continue;
+					}
+				}
+				time = time.plusMinutes(item.teamActivities.get(i).duration);
+			}
+			//since the duration is already calculated for 420mins
+			item.teamActivities.add(activityObj.getSpeechActivity());
+			item.teamActivities.get(item.teamActivities.size() - 1).startTime = time;
+			}
+	}
+	
+	public void assignActivitiesToTeams(ArrayList<TeamModel> teams, ArrayList<ActivityModel> allactivites, int numberOfTeams) {
+		method1(teams,allactivites,numberOfTeams);
+		method2(teams,allactivites,numberOfTeams);
+		method3(teams);
+
+	}
+	
+	public void printTeamDetails(ArrayList<TeamModel> teams) {
+		for (TeamModel item : teams) {
+			System.out.println("\n" + item.teamname + ":");
+			for(ActivityModel eachActivity : item.teamActivities) {
+				System.out.println(Constants.DATE_TIME_FORMATTER.format(eachActivity.startTime) + " : " + eachActivity.activityName + "   " + eachActivity.duration + "min");
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+package events;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import Models.ActivityModel;
+
+public class Activity {
+	
+	public ArrayList<ActivityModel> getActivitiesList(String fileContent) {
+		ArrayList<ActivityModel> activities = new ArrayList<ActivityModel>();
+		String[] splitlines = fileContent.split("\n");
+		
+		for(int index = 0; index < splitlines.length; index++) {
+			
+			var item = new ActivityModel();
+			var text = splitlines[index].trim().toLowerCase();
+			
+			if(text.contains("sprint"))
+			{
+				item.duration = 15;
+				item.activityName = text.replace("sprint", "");
+				//System.out.println("item.duration : " + item.duration);
+				//System.out.println("item.activityName : " + item.activityName);
+
+				
+			}
+			else if(text.endsWith("min"))//lenduck herding 60min
+			{
+				String textWithoutMin = text.substring(0, text.length() -3); //lenduck herding 60
+				String name = (textWithoutMin.substring(0,textWithoutMin.length() - 2)).trim();//lenduck herding
+				String duration = textWithoutMin.substring(textWithoutMin.length() - 2, textWithoutMin.length());
+				item.duration  = Integer.parseInt(duration);
+				item.activityName =  name;
+				//System.out.println("textWithoutMin : " + textWithoutMin);
+				//System.out.println("name : " + name);
+				//System.out.println("duration : " + duration);
+
+			}
+			activities.add(item);
+		}
+		Collections.sort((List<ActivityModel>) activities);
+		for (ActivityModel item : activities) {
+			System.out.println("Name : "+ item.activityName + " -- Duration : " + item.duration);
+		}
+
+		return activities;
+	}
+	
+	
+	
+}

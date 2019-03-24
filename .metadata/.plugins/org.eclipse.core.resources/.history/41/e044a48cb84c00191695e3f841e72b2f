@@ -1,0 +1,26 @@
+package events;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import Models.ActivityModel;
+import Utils.FileOperation;
+import events.Activity;
+
+public class Start {
+	
+	static Activity activityObj = new Activity();
+	
+	public static void main (String [] arguments) throws FileNotFoundException
+    {
+		// /Users/deepikathimmegowda/Desktop/Java-Deloitte/Organise-Events/src/activities.txt
+		String filePath = FileOperation.getFilePathInput();
+		String fileContent = FileOperation.readFileContent(filePath);
+		
+		ArrayList<ActivityModel> activityModel = activityObj.getActivitiesList(fileContent);
+	
+		
+    }
+}
