@@ -36,7 +36,8 @@
 
 1. Application excepts user to give file path for activities file
 1. Activities file to include activity name followed by duration
-1. Activity do not exceed more than 60mins
+1. Activity do not exceed more than 60min
+1. Each activity end with min
 1. Based on the number of activites list, teams will be divided
 1. 9AM to 12 PM is 180mins and 1 PM to 5 PM 240mins, to total of 420(180 + 240) minutes is added to each team at the most
 
