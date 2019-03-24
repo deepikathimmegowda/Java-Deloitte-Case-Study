@@ -7,6 +7,7 @@
 1. Source Code
 1. Jar Executable
 1. Unit test report
+1. Result png
 
 
 #### Implementation Logic
